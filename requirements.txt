@@ -1,0 +1,5 @@
+pandas==1.5.2
+biopython==1.80
+matplotlib==3.6.2
+numpy==1.23.5
+matplotlib_venn==0.11.7
