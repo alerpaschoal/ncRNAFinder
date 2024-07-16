@@ -26,6 +26,9 @@ After using our automated installation, our tool will already be in the PATH, al
 - [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi)
 - [INFERNAL](http://eddylab.org/infernal/)
 
+> [!NOTE]
+> All Python libraries, BLAST, and INFERNAL are automatically installed during the automated installation.
+
 ## Usage
 To execute the tool, simply use the following command:
 ~~~
