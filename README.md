@@ -16,7 +16,7 @@ sudo sh install_ncRNAFinder.sh
 
 After using our automated installation, our tool will already be in the PATH, allowing you to use it in any folder.
 
-##Requirements
+## Requirements
 - Python
   - Biopython
   - Matplotlib
