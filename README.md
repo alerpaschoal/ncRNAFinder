@@ -56,4 +56,4 @@ ncRNAFinder.py -f <input_file> -o <output_name>
 ## Reference
 
 ## Contact
-To report bugs, to ask for help and to give any feedback, please contact Alexandre R. Paschaol (paschoal@utfpr.edu.br) or Vitor Gregorio (vitor-gregorio@hotmail.com).
+To report bugs, to ask for help and to give any feedback, please contact Alexandre R. Paschoal (paschoal@utfpr.edu.br) or Vitor Gregorio (vitor-gregorio@hotmail.com).
