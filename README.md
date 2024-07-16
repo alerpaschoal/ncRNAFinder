@@ -4,7 +4,7 @@
 ncRNAFinder is an automatic and scalable system for large-scale data annotation analysis of ncRNAs which use both sequence and structural search strategy for ncRNA annotation.
 
 ## Install
-To use the ncRNAFinder, it is necessary to install some dependencies and databases. First, the necessary tools are BLAST (version 2.15.0) and INFERNAL (1.1.5). Second, the databases needed are RNAcentral (version 24) and Rfam (version 14.10). Lastly, the Python libraries required are biopython, matplotlib, matplotlib_venn, numpy, pandas, and pip. To install them, download the master folder and follow the steps below for an automatic installation:
+To use the ncRNAFinder, it is necessary to install some dependencies and databases. First, the necessary tools are [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) (version 2.15.0) and [INFERNAL](http://eddylab.org/infernal/) (1.1.5). Second, the databases needed are RNAcentral (version 24) and Rfam (version 14.10). Lastly, the Python libraries required are biopython, matplotlib, matplotlib_venn, numpy, pandas, and pip. To install them, download the master folder and follow the steps below for an automatic installation:
 
 > [!IMPORTANT]
 > The download of the RNAcentral database takes some time, almost 7 hours. 
@@ -17,14 +17,14 @@ sudo sh install_ncRNAFinder.sh
 After using our automated installation, our tool will already be in the PATH, allowing you to use it in any folder.
 
 ## Requirements
-- Python
-  - Biopython
-  - Matplotlib
+- [Python](https://www.python.org)
+  - [Biopython](https://biopython.org)
+  - [Matplotlib](https://matplotlib.org)
   - Matplotlib_venn
-  - Numpy
-  - Pandas
-- BLAST
-- INFERNAL
+  - [Numpy](https://numpy.org)
+  - [Pandas](https://pandas.pydata.org)
+- [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi)
+- [INFERNAL](http://eddylab.org/infernal/)
 
 ## Usage
 To execute the tool, simply use the following command:
