@@ -54,6 +54,30 @@ ncRNAFinder.py -f <input_file> -o <output_name>
 -r|BestHit <1|0>                                          Option to filter only the best result between two strands, based on E-value), 1-yes or 0-no. (Default: 1)
 ~~~
 
+## Output
+```
+<output_name>/
+├──  <output_name>_annotation.gff
+├──  <output_name>_annotation.csv
+├──  <output_name>_ID_annotation.txt
+├──  <output_name>_sequences_ncRNA.fa
+├──  <output_name>_Table_quantity_ncRNAs.csv
+├──  Figures/
+│   ├──  <output_name>_BarPlot.png
+│   ├──  <output_name>_DiagramaVeen.png
+│   └──  <output_name>_StackedPlot.png
+├──  miRNA/
+│   ├──  <output_name>_miRNA_annotation.gff
+│   ├──  <output_name>_miRNAs.csv
+│   ├──  <output_name>_miRNA_sequences_ncRNA.fa
+│   └──  <output_name>_miRNA_Table_quantity_ncRNAs.csv
+└──  tRNA/
+    ├──  <output_name>_tRNA_annotation.gff
+    ├──  <output_name>_tRNAs.csv
+    ├──  <output_name>_tRNA_sequences_ncRNA.fa
+    └──  <output_name>_tRNA_Table_quantity_ncRNAs.csv
+```
+
 ## Reference
 
 ## Contact
