@@ -55,6 +55,8 @@ ncRNAFinder.py -f <input_file> -o <output_name>
 ~~~
 
 ## Output
+The ncRNAFinder automatically outputs the annotation in GFF and CSV formats, along with a text file containing the IDs with the original annotation from each tool (BLAST and INFERNAL), a table with the number of ncRNAs annotated, and three graphs: (i) a bar plot showing the number of ncRNAs annotated, (ii) a Venn diagram with the number of ncRNAs identified by each tool (BLAST and INFERNAL), and (iii) a stacked bar plot with the number of ncRNAs identified in each chromosome. Additionally, the ncRNAFinder generates exclusive outputs for miRNA and tRNA, including their annotations in CSV and GFF formats, their sequences, and a table with each type. 
+
 ```
 <output_name>/
 ├──  <output_name>_annotation.gff
@@ -77,6 +79,8 @@ ncRNAFinder.py -f <input_file> -o <output_name>
     ├──  <output_name>_tRNA_sequences_ncRNA.fa
     └──  <output_name>_tRNA_Table_quantity_ncRNAs.csv
 ```
+
+## Pypi 
 
 ## Reference
 
