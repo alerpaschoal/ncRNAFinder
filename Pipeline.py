@@ -498,10 +498,17 @@ def pipeBlast(arqBlast1):
     resultadoPositiva = Parallel(n_jobs =int(args['threads']))(delayed(overlaps_blast)(positiva[positiva['targetName']==x]) for x in vet1)
     resultadoNegativa = Parallel(n_jobs = int(args['threads']))(delayed(overlaps_blast)(negativa[negativa['targetName']==x]) for x in vet2)
 
-    resultPositiva = pd.concat(resultadoPositiva)
-    resultNegativa = pd.concat(resultadoNegativa)
-
-    resultBlast2 = pd.merge(resultPositiva, resultNegativa, how ='outer') #junto os resultados em um dataframe só
+    if (len(resultadoPositiva) != 0) & (len(resultadoNegativa) != 0):
+        resultPositiva = pd.concat(resultadoPositiva)
+        resultNegativa = pd.concat(resultadoNegativa)
+        resultBlast2 = pd.merge(resultPositiva, resultNegativa, how ='outer') #junto os resultados em um dataframe só
+    elif (len(resultadoNegativa) == 0):
+        resultPositiva = pd.concat(resultadoPositiva)
+        resultBlast2 = resultPositiva
+    else:
+        resultNegativa = pd.concat(resultadoNegativa)
+        resultBlast2 = resultNegativa
+         
     resultBlast2 = resultBlast2[['targetName', 'seqFrom', 'seqTo', 'pident', 'qcover', 'IDdb', 'strand', 'score', 'Evalue', 'ncRNA', 'queryName', 'source']] #organiza o datafraame
     resultBlast2 = resultBlast2.sort_values(['targetName', 'seqFrom', 'seqTo', 'Evalue', 'score'], ascending=[True,True, False, True, False]) #ordena o dataframe
     resultBlast2['ncRNA'] = resultBlast2.ncRNA.astype('object')
