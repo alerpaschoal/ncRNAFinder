@@ -51,9 +51,10 @@ if resultFasta ==0:
     if p.is_alive() ==False:
         subprocess.run("sed '/#/d' "+args["output"]+"Infernal.tbl > aux.tbl", shell=True)
         resultInfernal = subprocess.run("awk '{print $2"+'";"'+"$3"+'";"'+"$4"+'";"'+"$5"+'";"'+"$6"+'";"'+"$7"+'";"'+"$8"+'";"'+"$9"+'";"'+"$10"+'";"'+"$11"+'";"'+"$12"+'";"'+"$13"+'";"'+"$14"+'";"'+"$15"+'";"'+"$16"+'";"'+"$17"+'";"'+"$18"+'";"'+"$19"+'";"'+"$20"+'";"'+"$21"+'";"'+"$22"+'";"'+"$23"+'";"'+"$24"+'";"'+"$25"+'";"'+"$26"+'";"'+"$27}' aux.tbl > "+args["output"]+".tbl", shell=True).returncode
-        
-        if resultInfernal ==0:
-            subprocess.run("Pipeline.py -b blastn_"+args['output']+"_i"+str(args['pident'])+".tsv -i "+args["output"]+".tbl -f " + args['fasta'] + " -c "+str(args['cover'])+ " -r "+args['BestHit']+ " -t "+str(args['threads']), shell=True)
+        resultBlast = subprocess.run("awk '{if(($9 - $8 + 1)*100/$15 >= "+str(args['cover'])+") print $0 '} blastn_"+args['output']+"_i"+str(args['pident'])+".tsv > blastn_filtered.tsv", shell=True).returncode
+
+        if resultInfernal ==0 and resultBlast ==0:
+            subprocess.run("Pipeline.py -b blastn_filtered.tsv -i "+args["output"]+".tbl -f " + args['fasta'] + " -c "+str(args['cover'])+ " -r "+args['BestHit']+ " -t "+str(args['threads']), shell=True)
 
             os.remove("FASTA_Temp.pkl")
             os.remove(args["output"]+"db.ndb")
